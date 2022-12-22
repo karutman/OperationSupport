@@ -6,7 +6,7 @@
         This menu item's purpose is to overwrite another one defined in
         the base module in order to set new groups.
     -->
-    <menuitem id="operation_support_management_menu_root" name="Operation Support Management">
+    <menuitem id="operation_support_management_menu_root" name="Operation Support">
         <menuitem id="operation_support_project_menu" name="Projects" sequence="5">
             <menuitem id="operation_support_project_menu_action" action="operation_support_project_action" sequence="5"/>
         </menuitem>
