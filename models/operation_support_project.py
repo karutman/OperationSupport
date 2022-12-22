@@ -5,7 +5,7 @@ from odoo import fields, models
 class OperationSupportProject(models.Model):
     # ------------ Private Attributes -------------
     _name = "operation.support.project"
-    _description = "project start"
+    _description = "Operation Support Project"
     
     # ------------ Fields Declaration -------------
 
