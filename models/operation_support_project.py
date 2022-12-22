@@ -10,8 +10,8 @@ class OperationSupportProject(models.Model):
     # ------------ Fields Declaration -------------
 
     # Basic
-    projectname = fields.Char("Title", required=True)
-    projectdescription = fields.Text("Description")
-    projectcustomer = fields.Char("Title", required=True)
-    projectdate_availability = fields.Date("Available From")
-    projectdate_expired = fields.Date("Available To")
+    project_name = fields.Char("Title", required=True)
+    project_description = fields.Text("Description")
+    project_customer = fields.Char("Title", required=True)
+    project_date_availability = fields.Date("Available From")
+    project_date_expired = fields.Date("Available To")
