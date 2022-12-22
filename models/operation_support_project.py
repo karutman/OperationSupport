@@ -2,12 +2,11 @@
 
 from odoo import fields, models
 
-class ProjectManagement(models.Model):
+class OperationSupportProject(models.Model):
     # ------------ Private Attributes -------------
-    _name = "project.managment"
+    _name = "operation.support.project"
     _description = "project start"
-    _order = "id desc"
-
+    
     # ------------ Fields Declaration -------------
 
     # Basic
