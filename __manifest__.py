@@ -9,6 +9,7 @@
     "author": "Odoo Community Association (OCA)",
     "depends": ["base"],
     "data": [
+        'security/ir.model.access.csv',
     ],
     "application": True,
     "installable": True,
