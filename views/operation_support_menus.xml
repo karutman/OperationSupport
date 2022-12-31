@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Top menu item -->
+    <!--
+        This menu item's purpose is to overwrite another one defined in
+        the base module in order to set new groups.
+    -->
+    <menuitem id="operation_support_management_menu_root" name="Operation Support">
+        <menuitem id="operation_support_menu" name="Incidens" sequence="5">
+            <menuitem id="operation_support_menu_action" action="operation_support_action" sequence="5"/>
+        </menuitem>
+        <menuitem id="operation_support_project_menu" name="Configs" sequence="10">
+            <menuitem id="operation_support_project_menu_action" action="operation_support_project_action" sequence="5"/>
+            <menuitem id="operation_support_task_menu_action" action="operation_support_task_action" sequence="10"/>
+            <menuitem id="operation_support_tag_menu_action" action="operation_support_tag_action" sequence="20"/>
+        </menuitem>
+        <menuitem id="operation_support_tool_menu" name="Tool" sequence="15">
+            <menuitem id="operation_support_tool_menu_action" action="operation_support_tool_action" sequence="5"/>
+        </menuitem>       
+    </menuitem>    
+</odoo>

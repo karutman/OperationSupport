@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="operation_support_tool_view_form" model="ir.ui.view">
+        <field name="name">operation.support.tool.form</field>
+        <field name="model">operation.support.tool</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>                            
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="ost_from"/>
+                            <field name="ost_where"/>
+                            <field name="ost_group_by"/>
+                            <button name="action_query" type="object" string="Query"/> 
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Output">
+                            <group>
+                                <field name="ost_output"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="operation_support_tool_view_tree" model="ir.ui.view">
+        <field name="name">operation.support.tool.tree</field>
+        <field name="model">operation.support.tool</field>
+        <field name="arch" type="xml">
+            <tree string="Properties">
+                <field name="name"/>
+                <field name="ost_from"/>
+                <field name="ost_where"/>                              
+            </tree>
+        </field>
+    </record>
+    <record id="operation_support_tool_action" model="ir.actions.act_window">
+        <field name="name">Tools</field>
+        <field name="res_model">operation.support.tool</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Tools
+            </p>
+        </field>     
+    </record>
+</odoo>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="operation_support_project_view_form" model="ir.ui.view">
+        <field name="name">operation.support.project.form</field>
+        <field name="model">operation.support.project</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group col='2'>
+                            <field name="customer"/>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <group>
+                                <field name="description"/>
+                            </group>
+                        </page>
+                        <page string="Ticket IDs">
+                            <group>
+                                <field name="project_ids"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="operation_support_project_view_tree" model="ir.ui.view">
+        <field name="name">operation.support.project.tree</field>
+        <field name="model">operation.support.project</field>
+        <field name="arch" type="xml">
+            <tree string="Properties">
+                <field name="name"/>
+                <field name="customer"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="description"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+    <record id="operation_support_project_action" model="ir.actions.act_window">
+        <field name="name">Projects</field>
+        <field name="res_model">operation.support.project</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a project start
+            </p>
+        </field>     
+    </record>
+</odoo>
