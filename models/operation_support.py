@@ -21,11 +21,11 @@ class OperationSupport(models.Model):
 
     # Basic
     name = fields.Char("Ticket ID", default=lambda self: self._generate_ticket_id(), readonly=True)
-    open_case_date = fields.Datetime("Open case date", default=lambda self: self._datetime_today(), required=True)
-    contact_persion = fields.Char("Contact person", required=True)
-    contact_email_phone = fields.Char("Contact email/phone", required=True)
-    respond_date = fields.Datetime("Respond date", default=lambda self: self._datetime_today(), required=True)
-    request_detail = fields.Text("Request Detail", required=True)
+    open_case_date = fields.Datetime("Open case time", default=lambda self: self._datetime_today(), required=True)
+    contact_persion = fields.Char("Customer name", required=True)
+    contact_email_phone = fields.Char("Customer contact", required=True)
+    respond_date = fields.Datetime("Respond time", default=lambda self: self._datetime_today(), required=True)
+    request_detail = fields.Text("Issue Description", required=True)
     root_cause = fields.Text("Root Cause")
     cm_type = fields.Selection(
         selection=[
@@ -52,13 +52,13 @@ class OperationSupport(models.Model):
             string="Case Status",
             default='inprogress',
         )
-    case_complete_date = fields.Datetime("Case completed date")
+    case_complete_date = fields.Datetime("Completed time")
     
     # Relational
-    project_id = fields.Many2one("operation.support.project", string="Project no.")
-    task_ids = fields.One2many("operation.support.task", "ticket_id", string="Task IDs")
+    project_id = fields.Many2one("operation.support.project", string="Project name")
+    task_ids = fields.One2many("operation.support.task", "ticket_id", string="Tasks")
     tag_ids = fields.Many2many("operation.support.tag", string="Tags")
-    user_id = fields.Many2many("res.users", string="User name")
+    user_id = fields.Many2many("res.users", string="Engineer Support")
     
     # Computed
     total_usage_time = fields.Float(
