@@ -8,7 +8,7 @@ class OperationSupportProject(models.Model):
     _description = "Operation Support Project"
     _order = "name"
     _sql_constraints = [
-        ("check_end_date", "CHECK(end_date <= start_date)", "The expected project' end date must after project's start"),
+        ("check_end_date", "CHECK(end_date > start_date)", "The expected project' end date must after project's start"),
     ]
     
     # ------------ Fields Declaration -------------
@@ -16,8 +16,8 @@ class OperationSupportProject(models.Model):
     # Basic
     name = fields.Char("Project MA Name", required=True)
     customer = fields.Char("Customer Name", required=True)
-    start_date = fields.Date("MA Start Date", required=True)
-    end_date = fields.Date("MA Expired Date", required=True)
+    start_date = fields.Date("Start from", required=True)
+    end_date = fields.Date("to", required=True)
     description = fields.Text("Project MA Description")
 
     # Special

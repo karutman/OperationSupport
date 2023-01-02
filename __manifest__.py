@@ -16,6 +16,8 @@
         'views/operation_support_task_views.xml',
         'views/operation_support_tag_views.xml',
         'views/operation_support_tool_views.xml',
+        'views/operation_support_stage_views.xml',
+        'data/defaultdata.xml',
         'views/operation_support_menus.xml',
         'views/scheduled_action.xml',
         'views/res_users_views.xml',        

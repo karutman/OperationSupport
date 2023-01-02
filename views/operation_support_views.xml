@@ -140,7 +140,7 @@
     </record>
 
     <record id="operation_support_action" model="ir.actions.act_window">
-        <field name="name">Support Tickets</field>
+        <field name="name">Tickets</field>
         <field name="res_model">operation.support</field>
         <field name="view_mode">tree,kanban,form</field>
         <field name="context">{'search_default_available': 1}</field>

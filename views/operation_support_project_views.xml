@@ -7,23 +7,30 @@
             <form>
                 <sheet>
                     <div class="oe_title">
-                        <h1>
-                            <field name="name"/>
+                        <h1 class="d-flex flex-row">
+                            <field name="name" class="o_text_overflow" placeholder="e.g. PJ#000/23 Netmarks (Thailand) Co., Ltd."/>
                         </h1>
                     </div>
-                    <group>
-                        <group col='2'>
+                    <group name="group_top" col="3">
+                        <group name="group_left">
                             <field name="customer"/>
-                            <field name="start_date"/>
-                            <field name="end_date"/>
+                            <label for="start_date" string="Start Date"/>
+                            <div name="dates" class="o_row">
+                                <field name="start_date" widget="daterange" options="{'related_end_date': 'end_date'}"/>
+                                <i class="fa fa-long-arrow-right mx-2 oe_edit_only" aria-label="Arrow icon" title="Arrow"/>
+                                <i class="fa fa-long-arrow-right mx-2 oe_read_only" aria-label="Arrow icon" title="Arrow" attrs="{'invisible': [('start_date', '=', False), ('end_date', '=', False)]}"/>
+                                <field name="end_date" widget="daterange" options="{'related_start_date': 'start_date'}"/>
+                            </div>
                             <field name="active"/>
+                        </group>
+                        <group name="group_middle">
+                        </group>
+                        <group name="group_right">
                         </group>
                     </group>
                     <notebook>
-                        <page string="Description">
-                            <group>
-                                <field name="description"/>
-                            </group>
+                        <page  name="description" string="Description">
+                            <field name="description" options="{'resizable': false}" placeholder="Project description..."/>
                         </page>
                         <page string="Ticket IDs">
                             <group>
@@ -50,7 +57,7 @@
         </field>
     </record>
     <record id="operation_support_project_action" model="ir.actions.act_window">
-        <field name="name">Projects</field>
+        <field name="name">Project Maintenance</field>
         <field name="res_model">operation.support.project</field>
         <field name="view_mode">tree,form</field>
         <field name="help" type="html">

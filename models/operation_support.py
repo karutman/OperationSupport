@@ -20,7 +20,7 @@ class OperationSupport(models.Model):
     # ------------ Fields Declaration -------------
 
     # Basic
-    name = fields.Char("Ticket ID", default=lambda self: self._generate_ticket_id(), readonly=True)
+    name = fields.Char("Ticket ID:", default=lambda self: self._generate_ticket_id(), readonly=True)
     open_case_date = fields.Datetime("Open case time", default=lambda self: self._datetime_today(), required=True)
     contact_persion = fields.Char("Customer name", required=True)
     contact_email_phone = fields.Char("Customer contact", required=True)

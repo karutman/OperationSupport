@@ -17,6 +17,7 @@
             <menuitem id="operation_support_project_menu_action" action="operation_support_project_action" sequence="5"/>
             <menuitem id="operation_support_task_menu_action" action="operation_support_task_action" sequence="10"/>
             <menuitem id="operation_support_tag_menu_action" action="operation_support_tag_action" sequence="20"/>
+            <menuitem id="operation_support_stage_menu_action" action="operation_support_stage_action" sequence="25"/>
         </menuitem>       
     </menuitem>    
 </odoo>
